@@ -2765,6 +2765,10 @@ static int mdss_dsi_event_handler(struct mdss_panel_data *pdata,
 	case MDSS_EVENT_POST_PANEL_ON:
 		rc = mdss_dsi_post_panel_on(pdata);
 		break;
+
+#ifdef CONFIG_STATE_NOTIFIER
+		state_resume();
+#endif
 	case MDSS_EVENT_BLANK:
 		power_state = (int) (unsigned long) arg;
 		if (ctrl_pdata->off_cmds.link_state == DSI_HS_MODE)
