@@ -20,7 +20,7 @@ ZIP_NAME="$VERSION"-"$DATE"
 VERSION="v1.0~AeroSmith~"
 DATE=`date +"%Y%m%d"`
 export ARCH=arm64 && export SUBARCH=arm64
-export CROSS_COMPILE="/home/Rin/dragon/aarch64-linux-android-4.9/bin/aarch64-linux-android-"
+export CROSS_COMPILE="/home/Rin/linaro/bin/aarch64-linux-gnu-"
 
 make_zip()
 {
