@@ -4,7 +4,7 @@
 ## AnyKernel setup
 # begin properties
 properties() { '
-kernel.string=Englezos Kernel for Redmi Note 4(X)
+kernel.string=CloverKernel for Redmi Note 4(X)
 do.devicecheck=1
 do.modules=0
 do.cleanup=1
@@ -36,7 +36,7 @@ chown -R root:root $ramdisk/*;
 is_treble=$(file_getprop /system/build.prop "ro.treble.enabled");
 if [ ! "$is_treble" -o "$is_treble" == "false" ]; then
   ui_print " ";
-  ui_print "Englezos Kernel only supports Treble ROMS!";
+  ui_print "Clover Kernel only supports Treble ROMS!";
   exit 1;
 fi;
 
@@ -46,7 +46,7 @@ dump_boot;
 # begin ramdisk changes
 
 # init.rc
-insert_line init.rc "import /init.englezos.rc" after "import /init.trace.rc" "import /init.englezos.rc";
+insert_line init.rc "import /init.clover.rc" after "import /init.trace.rc" "import /init.clover.rc";
 
 # end ramdisk changes
 

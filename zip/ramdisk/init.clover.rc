@@ -6,7 +6,7 @@ import /init.performance_profiles.rc
 on late-fs
     # boot time fs tune
     write /sys/block/sda/queue/iostats 0
-    write /sys/block/sda/queue/scheduler cfq
+    write /sys/block/sda/queue/scheduler anxiety
     write /sys/block/sda/queue/iosched/slice_idle 0
     write /sys/block/sda/queue/read_ahead_kb 2048
     write /sys/block/sda/queue/nr_requests 256
@@ -36,5 +36,5 @@ on property:sys.boot_completed=1
     write /sys/block/sda/queue/iostats 1
 
 on property:init.svc.qcom-post-boot=stopped
-    write /proc/sys/vm/swappiness 100
+    write /proc/sys/vm/swappiness 200
     write /sys/module/lowmemorykiller/parameters/minfree "18432,23040,27648,32256,36864,46080"
